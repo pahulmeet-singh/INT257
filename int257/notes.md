@@ -10,4 +10,4 @@
 3. App Router conventions
     - Folder structure maps directly to URL routes: a folder named `xyz` in the `app` directory creates the route `/xyz`.
     - `page.js` files define route content: placing `page.js` inside the `xyz` folder renders that file's contents when users navigate to `/xyz`.
-    - 
+    - nesting folders creates nested routes: a folder structure like `app/xyz/abc/page.js` corresponds to the route `/xyz/abc`.
