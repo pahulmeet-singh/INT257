@@ -2,6 +2,7 @@
 // /profile/[name]/[id]/[email] and display them on the page.
 export default async function Profile({params}){
     const {name,id,email}=await params;
+    throw new Error("Failed to fetch data") // this is a test error to show the error page
     return(
         <div>
             <h1>Profile Page</h1>
