@@ -10,3 +10,5 @@ export default async function User({params}){
         </div>
     )
 }
+// the reason we used async function is because we are fetching data from the api and it takes time to fetch the data. So we need to use async function to wait for the data to be fetched before rendering the component.
+// in react by default, it is a client component, but in nextjs by default it is a server component. 
