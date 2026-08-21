@@ -3,7 +3,7 @@ import Image from "next/image";
 export default async function Home(){
   await new Promise((resolve) => 
     setTimeout(resolve, 5000))
-  const students=undefined
+  throw new Error("Failed to fetch data") // this is a test error to show the error page
   return(
     <>
     <h1> Home Page</h1>
