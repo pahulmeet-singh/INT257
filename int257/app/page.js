@@ -12,16 +12,29 @@
 // }
 
 
-
+"use client"
 import Link from "next/link";
+import { useRouter } from "next/navigation";//importing useRouter hook from next/navigation to navigate programmatically
+//do not import useRouter from "next/router" because it is deprecated in nextjs 13 and above
 
 export default function Home() {
+  const router = useRouter()//predefined hook in nextjs to navigate programmatically
+  const handleRedirect = () => {
+    router.push("/about")//this will redirect to about page
+    // some other use
+
+
+  }
   return (
     <div>
       <Link href="/about">Go to about page</Link>
-      <Link href="/profile">Go to profile page</Link>
-      {/* if we want to give a dynamic link */}
-      <Link href="/profile/${id}">dynamic link</Link>
+      <Link href="/contact">Go to contact page</Link>
+
+      <button onClick={handleRedirect}>About</button>
+      <button onClick={() => router.push("/contact")}>Contact</button>
+
+
+
     </div>
   );
 }
