@@ -1,18 +1,28 @@
-import Image from "next/image";
+// import Image from "next/image";
 
-export default async function Home(){
-  await new Promise((resolve) => 
-    setTimeout(resolve, 5000))
-  // throw new Error("Failed to fetch data") // this is a test error to show the error page
-  return(
-    <>
-    <h1> Home Page</h1>
-    </>
-  )
+// export default async function Home(){
+//   await new Promise((resolve) => 
+//     setTimeout(resolve, 5000))
+//   // throw new Error("Failed to fetch data") // this is a test error to show the error page
+//   return(
+//     <>
+//     <h1> Home Page</h1>
+//     </>
+//   )
+// }
+
+
+
+import Link from "next/link";
+
+export default function Home() {
+  return (
+    <div>
+      <Link href="/about">Go to about page</Link>
+      <Link href="/profile">Go to profile page</Link>
+    </div>
+  );
 }
-
-
-
 
 
 
