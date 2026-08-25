@@ -1,5 +1,3 @@
-// import Image from "next/image";
-
 // export default async function Home(){
 //   await new Promise((resolve) => 
 //     setTimeout(resolve, 3000))
@@ -21,20 +19,17 @@ export default function Home() {
   const router = useRouter()//predefined hook in nextjs to navigate programmatically
   const handleRedirect = () => {
     router.push("/about")//this will redirect to about page
-    // some other use
-
-
   }
   return (
     <div>
       <Link href="/about">Go to about page</Link>
+      <br></br>
       <Link href="/contact">Go to contact page</Link>
-
+      <br></br>
       <button onClick={handleRedirect}>About</button>
+      <br></br>
       <button onClick={() => router.push("/contact")}>Contact</button>
-
-
-
+      <br></br>
     </div>
   );
 }
