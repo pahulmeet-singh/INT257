@@ -11,3 +11,16 @@
     - Folder structure maps directly to URL routes: a folder named `xyz` in the `app` directory creates the route `/xyz`.
     - `page.js` files define route content: placing `page.js` inside the `xyz` folder renders that file's contents when users navigate to `/xyz`.
     - nesting folders creates nested routes: a folder structure like `app/xyz/abc/page.js` corresponds to the route `/xyz/abc`.
+
+## Error Handling
+
+Error handling is a critical aspect of any web application. It involves managing and responding to errors that may occur during the execution of the application. In Next.js, error handling can be implemented at different levels:
+
+1. Global Error Handling
+    - Next.js provides a built-in error handling mechanism that allows developers to catch and handle errors globally. This can be done by creating a custom `_error.js` file in the `pages` directory. This file can be used to render a custom error page for different types of errors, such as 404 (Not Found) or 500 (Internal Server Error).
+2. API Route Error Handling
+    - When working with API routes in Next.js, error handling can be implemented within the route handler functions. Developers can use try-catch blocks to catch errors and respond with appropriate HTTP status codes and error messages. For example, if an error occurs while fetching data from a database, the API route can respond with a 500 status code and a JSON object containing the error message.
+3. Client-Side Error Handling
+    - In addition to server-side error handling, Next.js also allows for client-side error handling. This can be done by using error boundaries in React components. Error boundaries are React components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of crashing the entire application. This helps improve the user experience by preventing the application from crashing and providing a graceful way to handle errors on the client side.
+
+"Error handling is essential for maintaining the stability and reliability of a web application. By implementing proper error handling mechanisms, developers can ensure that their applications can gracefully handle unexpected situations and provide meaningful feedback to users when errors occur.
