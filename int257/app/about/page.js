@@ -3,6 +3,7 @@ import Careers from "../teams/careers/page";
 
 export default function About(){
     notFound()
+    throw new Error("Failed to fetch data") // this is a test error to show the error page
     return (
         <>
         <h1>About Page</h1>

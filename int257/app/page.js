@@ -2,7 +2,7 @@
 
 // export default async function Home(){
 //   await new Promise((resolve) => 
-//     setTimeout(resolve, 5000))
+//     setTimeout(resolve, 3000))
 //   // throw new Error("Failed to fetch data") // this is a test error to show the error page
 //   return(
 //     <>
@@ -20,9 +20,12 @@ export default function Home() {
     <div>
       <Link href="/about">Go to about page</Link>
       <Link href="/profile">Go to profile page</Link>
+      {/* if we want to give a dynamic link */}
+      <Link href="/profile/${id}">dynamic link</Link>
     </div>
   );
 }
+// using link tag is preferred over anchor tag for navigation in nextjs because it prefetches the page and makes the navigation faster
 
 
 
