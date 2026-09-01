@@ -56,3 +56,23 @@
 
 
 // now converting this into ISR (incremental static regenration)
+export const revalidate = 20 //this will revalidate the data every 10 seconds. This is useful when we want to fetch the data from the api and cache it in the server. We can use this to fetch the data from the api and cache it in the server. This is called incremental static regeneration.
+export default async function Posts(){
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts")
+    const currentTime = new Date().toLocaleTimeString()
+    const data = await response.json()
+    console.log(data)
+    return(
+        <>
+        {currentTime}
+        <h1> Posts Data</h1>
+        {data.map((item)=>item.title)}
+        </>
+    )
+}
+
+// here we removed cache:"no-store" because we want to cache the data in the server. We are using revalidate to revalidate the data every 10 seconds. This is useful when we want to fetch the data from the api and cache it in the server. We can use this to fetch the data from the api and cache it in the server. This is called incremental static regeneration.
+
+//now even if i refresh my page, no changes are visible immediately.
+// only after 20 seconds has passed can i see any changes(in time) on refreshing
+// because we are using revalidate to revalidate the data every 20 seconds. This is useful when we want to fetch the data from the api and cache it in the server. We can use this to fetch the data from the api and cache it in the server. This is called incremental static regeneration.

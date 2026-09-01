@@ -46,5 +46,3 @@ there are four types of rendering in nextjs: static generation, server-side rend
 4. Incremental Static Regeneration
     - Incremental static regeneration is the process of updating static pages after they have been built. This means that the HTML for a page can be regenerated on the server when a client makes a request for that page, even if the page was previously generated as a static file. This approach is ideal for pages that require frequent updates, such as news articles or product listings. Incremental static regeneration can improve performance and provide a better user experience since the content can be updated without requiring a full page reload.
     - used for pages that require frequent updates, such as news articles or product listings.
-
-###
