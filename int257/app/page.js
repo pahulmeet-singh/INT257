@@ -36,7 +36,7 @@ export default function Home() {
 // using link tag is preferred over anchor tag for navigation in nextjs because it prefetches the page and makes the navigation faster
 
 
-
+// rendering in nextjs is defined as the process of generating the HTML for a page. There are two types of rendering in nextjs: server-side rendering and client-side rendering. Server-side rendering is done on the server and client-side rendering is done on the client. In nextjs, we can use both types of rendering in the same application. We can use server-side rendering for some pages and client-side rendering for other pages. This is called hybrid rendering. In nextjs, we can use static generation for some pages and server-side rendering for other pages. This is called incremental static regeneration.
 
 
 
