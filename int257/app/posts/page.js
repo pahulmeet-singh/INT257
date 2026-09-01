@@ -38,17 +38,21 @@
 
 // now well just show one user's data
 // 
-export default async function Posts(){
-    const response = await fetch("https://jsonplaceholder.typicode.com/users/1",
-        {cache:"no-store"})//this will fetch the data from the api and cache it in the server. we are using no-store because we want to fetch the data every time the page is loaded.
+// export default async function Posts(){
+//     const response = await fetch("https://jsonplaceholder.typicode.com/users/1",
+//         {cache:"no-store"})//this will fetch the data from the api and cache it in the server. we are using no-store because we want to fetch the data every time the page is loaded.
 
-    // console.log(response)
-    const data = await response.json()
-    console.log(data)
-    return(
-        <>
-        <h1> Posts Data</h1>
-        <pre>Happy Birthday {data.name}</pre>
-        </>
-    )
-}
+//     // console.log(response)
+//     const data = await response.json()
+//     console.log(data)
+//     return(
+//         <>
+//         <h1> Posts Data</h1>
+//         <pre>Happy Birthday {data.name}</pre>
+//         </>
+//     )
+// }
+
+
+
+// now converting this into ISR (incremental static regenration)
