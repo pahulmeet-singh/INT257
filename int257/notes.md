@@ -33,12 +33,18 @@ there are four types of rendering in nextjs: static generation, server-side rend
 
 1. Static Generation
     - Static generation is the process of generating HTML at build time. This means that the HTML for a page is generated when the application is built, and it is served to the client as a static file. This approach is ideal for pages that do not change frequently, such as blog posts or product pages. Static generation can improve performance and reduce server load since the HTML is pre-rendered and can be cached by CDNs.
+    - used for pages that do not change frequently, such as blog posts or product pages.
 
 2. Server-Side Rendering
     - Server-side rendering is the process of generating HTML on each request. This means that the HTML for a page is generated on the server when a client makes a request for that page. This approach is ideal for pages that require dynamic content or personalized data, such as user dashboards or search results. Server-side rendering can improve SEO and provide a better user experience since the content is rendered on the server and sent to the client as a fully formed HTML document.
+    - used for pages that require dynamic content or personalized data, such as user dashboards or search results.
 
 3. Client-Side Rendering
     - Client-side rendering is the process of generating HTML on the client side using JavaScript. This means that the HTML for a page is generated in the browser after the initial page load. This approach is ideal for pages that require interactivity or real-time updates, such as chat applications or social media feeds. Client-side rendering can improve performance and provide a better user experience since the content can be updated without requiring a full page reload.
+    - used for events, buttons, and other interactive elements that require immediate feedback from the user.
 
 4. Incremental Static Regeneration
     - Incremental static regeneration is the process of updating static pages after they have been built. This means that the HTML for a page can be regenerated on the server when a client makes a request for that page, even if the page was previously generated as a static file. This approach is ideal for pages that require frequent updates, such as news articles or product listings. Incremental static regeneration can improve performance and provide a better user experience since the content can be updated without requiring a full page reload.
+    - used for pages that require frequent updates, such as news articles or product listings.
+
+###
