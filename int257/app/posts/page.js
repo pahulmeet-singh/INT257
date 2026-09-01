@@ -19,8 +19,27 @@
 // we are using map function to iterate over the data and display only the titles.
 //now we'll display not the entire 100 posts data but just the titles using map function
 
+// export default async function Posts(){
+//     const response = await fetch("https://jsonplaceholder.typicode.com/posts",
+//         {cache:"no-store"})//this will fetch the data from the api and cache it in the server. we are using no-store because we want to fetch the data every time the page is loaded.
+
+//     // console.log(response)
+//     const data = await response.json()
+//     console.log(data)
+//     return(
+//         <>
+//         <h1> Posts Data</h1>
+//         {data.map((item)=>item.title)}
+//         </>
+//     )
+// }
+
+
+
+// now well just show one user's data
+// 
 export default async function Posts(){
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts",
+    const response = await fetch("https://jsonplaceholder.typicode.com/users/1",
         {cache:"no-store"})//this will fetch the data from the api and cache it in the server. we are using no-store because we want to fetch the data every time the page is loaded.
 
     // console.log(response)
@@ -29,7 +48,7 @@ export default async function Posts(){
     return(
         <>
         <h1> Posts Data</h1>
-        {data.map((item)=>item.title)}
+        <pre>Happy Birthday {data.name}</pre>
         </>
     )
 }
