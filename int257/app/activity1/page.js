@@ -21,26 +21,32 @@
 
 //CLIENT SIDE RENDERING
 "use client"
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 
-export default async function Activity1(){
+export default function Activity1(){
+    const [users, setUsers] = useState([]);
     useEffect(() => {
-
-    },[])
-    // const response= await fetch(`https://jsonplaceholder.typicode.com/users`)
-//     return(
-//         <div> 
-//         {data.map((item) => (
-//             <ul key={item.id}>
-//                 <li><strong>ID: </strong>{item.id}</li>
-//                 <li><strong>Name: </strong>{item.name}</li>
-//                 <li><strong>Username: </strong>{item.username}</li>
-//                 <li>------------------------------------------</li>
-//             </ul>
-//         ))}
-//         </div>
-//     )
-// }
+        async function getUsers(){
+            const response= await fetch(`https://jsonplaceholder.typicode.com/users`)
+        
+        const data=await response.json()
+        setUsers(data)
+    }
+    getUsers()
+}, [])
+    return(
+        <div> 
+        {users.map((item) => (
+            <ul key={item.id}>
+                <li><strong>ID: </strong>{item.id}</li>
+                <li><strong>Name: </strong>{item.name}</li>
+                <li><strong>Username: </strong>{item.username}</li>
+                <li>------------------------------------------</li>
+            </ul>
+        ))}
+        </div>
+    )
+}
 
 
 
@@ -56,4 +62,4 @@ export default async function Activity1(){
 // because whatever request is going , it is not going the browser, it is going to the server. so server component can be async and client component cannot be async.
 
 
-// [] this dependecy means it will only run once when your compoonent renders
+// [] this dependecy means it will only run once when your compoonent renders for the first time. if you put any variable in the dependency array, it will run every time that variable changes. if you put nothing in the dependency array, it will run every time the component re-renders. 
