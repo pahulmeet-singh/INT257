@@ -6,7 +6,7 @@ export default function Counter() {
         <div>
             <h2>Counter App</h2>
             <button onClick={() => setCount(count + 1)}>+</button>
-            <p>Count:{count}</p>
+            <p>Count: {count}</p>
             <button onClick={() => setCount(count - 1)}>-</button>
         </div>
     ) 
