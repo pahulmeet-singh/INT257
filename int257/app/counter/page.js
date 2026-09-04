@@ -1,23 +1,13 @@
 import React from 'react'
 
 export default function Counter() {
-    let count=0
-    const handleIncrement=()=>{
-        count=count+1
-        console.log(count)
-
-    }
-    const handleDecrement=()=>{
-        count=count-1    
-        console.log(count)
-
-    }
+    const {count,setCount}=useState(0)
     return (
         <div>
             <h2>Counter App</h2>
-            <button onClick={handleIncrement}>+</button>
+            <button onClick={() => setCount(count + 1)}>+</button>
             <p>Count:{count}</p>
-            <button onClick={handleDecrement}>-</button>
+            <button onClick={() => setCount(count - 1)}>-</button>
         </div>
     ) 
 }
