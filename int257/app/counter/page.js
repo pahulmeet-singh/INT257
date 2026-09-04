@@ -20,6 +20,9 @@
 //     ) 
 // }
 
+// # Doing this way is not recommended because it will cause the entire component to re-render every time the state changes, which can lead to performance issues in larger applications. Instead, you can use the useState hook to manage the state of the counter and only re-render the parts of the component that need to be updated.
+
+
 
 "use client"
 import {useState} from "react"
