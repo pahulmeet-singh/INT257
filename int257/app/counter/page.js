@@ -55,3 +55,6 @@ export default function Counter() {
 // To make a component a client component, you need to add the "use client" directive at the top of the file. This tells Next.js to treat the component as a client component and allows it to use browser APIs and state management hooks.
 
 // we cannot make an asynchronous component a client component, because client components are rendered on the client-side and do not have access to server-side features like data fetching or server-side rendering. Asynchronous components are typically used for server-side rendering or data fetching, which requires access to server-side features. Therefore, it is not possible to make an asynchronous component a client component in Next.js.
+
+// activity: fetch json using fetch api and client side rendering in next js, and display the data in a table format.
+
