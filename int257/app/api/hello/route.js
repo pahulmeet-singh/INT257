@@ -79,9 +79,12 @@ export async function GET(){
 export async function POST(request){
     const data = await request.json()
 
-    students.push(...data)
+    students.push(data)
     return Response.json({
-        students:data,
+        students:students,
         message:"Data has been added successfully"
     })
 }
+
+//what we are doing differently here is that we are using the spread operator to append the data to the existing array instead of pushing the entire array as a single element. This way, we can add multiple students at once without creating nested arrays.
+//the reason we replaced the students:data with students:students is because we want to return the updated array of students after adding the new data. The students:data would only return the newly added data, while students:students returns the entire array including the new data.
