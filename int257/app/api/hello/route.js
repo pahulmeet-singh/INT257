@@ -35,3 +35,6 @@ export async function POST(request){
         message:"Data has been added successfully"
     })
 }
+
+/*what adding POST is doing here if it makes no difference in the output of the GET method?
+The addition of the POST method in your API allows clients to send data to the server, which can then be processed or stored. While the GET method retrieves and returns the existing list of students, the POST method enables clients to add new student data to the server.*/
