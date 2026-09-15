@@ -21,7 +21,7 @@ and we use these HTTP methods to perform CRUD operations
 let students = [
     {'id':1, 'name':'Pahul'},
     {'id':2, 'name':'Rohit'},
-    {'id':3, 'name':'Aman'},
+    {'id':3, 'name':'Aman'}
 ]
 
 export async function GET(){
