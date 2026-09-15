@@ -8,7 +8,7 @@ export default async function Technology() {
     return (
         <div>           
             {posts.map((post)=>(
-                <div>
+                <div key={post.id}>
                     Id:<p>{post.id}</p>
                     userId:<p>{post.userId}</p>
                     title:<p>{post.title}</p>
