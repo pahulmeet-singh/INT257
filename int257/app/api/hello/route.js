@@ -1,10 +1,10 @@
-export async function GET(){
-    function Response.json({
-        name:"Pahul",
-        id:1,
-        course:"B.Tech"
-    })
-}
+// export async function GET(){
+//     function Response.json({
+//         name:"Pahul",
+//         id:1,
+//         course:"B.Tech"
+//     })
+// }
 
 /*
 what is api and what does it do?
@@ -17,3 +17,13 @@ HTTP (Hypertext Transfer Protocol) is a protocol used for transmitting data over
 When you visit a website, your browser sends an HTTP request to the server hosting that website. The server then processes the request and sends back an HTTP response, which typically includes the requested web page or data. HTTP supports various methods, such as GET (to retrieve data), POST (to send data), PUT (to update data), and DELETE (to remove data).
 and we use these HTTP methods to perform CRUD operations
 */
+
+let students = [
+    {'id':1, 'name':'Pahul'},
+    {'id':2, 'name':'Rohit'},
+    {'id':3, 'name':'Aman'},
+]
+
+export async function GET(){
+    return Response.json(students)
+}
