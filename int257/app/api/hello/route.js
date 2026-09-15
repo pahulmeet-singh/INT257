@@ -18,6 +18,29 @@ When you visit a website, your browser sends an HTTP request to the server hosti
 and we use these HTTP methods to perform CRUD operations
 */
 
+// let students = [
+//     {'id':1, 'name':'Pahul'},
+//     {'id':2, 'name':'Rohit'},
+//     {'id':3, 'name':'Aman'}
+// ]
+
+// export async function GET(){
+//     return Response.json(students)
+// }
+
+// export async function POST(request){
+//     const data = await request.json()
+
+//     return Response.json({
+//         students:data,
+//         message:"Data has been added successfully"
+//     })
+// }
+
+// ouptput of POST request on postman
+
+//if we want to append out data to the existing data we can do it like this
+
 let students = [
     {'id':1, 'name':'Pahul'},
     {'id':2, 'name':'Rohit'},
@@ -30,19 +53,11 @@ export async function GET(){
 
 export async function POST(request){
     const data = await request.json()
+
+    students.push(data)
+    
     return Response.json({
         students:data,
         message:"Data has been added successfully"
     })
 }
-
-/*what adding POST is doing here if it makes no difference in the output of the GET method?
-The addition of the POST method in your API allows clients to send data to the server,
-which can then be processed or stored. While the GET method retrieves and returns the existing list of students,
-the POST method enables clients to add new student data to the server.
-
-to understand the difference, we need to use Postman or any other API testing tool to send a POST request with new student data. When the server receives this POST request, it can process the data (e.g., add it to a database or an in-memory array) and respond with a confirmation message.
-In your current implementation, the POST method simply returns the data sent in the request along with a success message, but it does not actually modify the existing students array. To make the POST method functional, you would need to implement logic to add the new student data to the students array or a database.
-
-In summary, while the GET method retrieves existing data, the POST method is intended for creating new data on the server. The two methods serve different purposes in an API and are both essential for enabling full CRUD (Create, Read, Update, Delete) functionality.
-*/
