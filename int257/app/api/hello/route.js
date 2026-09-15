@@ -27,3 +27,11 @@ let students = [
 export async function GET(){
     return Response.json(students)
 }
+
+export async function POST(request){
+    const data = await request.json()
+    return Response.json({
+        students:data,
+        message:"Data has been added successfully"
+    })
+}
