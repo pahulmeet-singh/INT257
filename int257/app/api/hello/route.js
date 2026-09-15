@@ -41,6 +41,31 @@ and we use these HTTP methods to perform CRUD operations
 
 //if we want to append out data to the existing data we can do it like this
 
+// let students = [
+//     {'id':1, 'name':'Pahul'},
+//     {'id':2, 'name':'Rohit'},
+//     {'id':3, 'name':'Aman'}
+// ]
+
+// export async function GET(){
+//     return Response.json(students)
+// }
+
+// export async function POST(request){
+//     const data = await request.json()
+
+//     students.push(data)
+
+//     return Response.json({
+//         students:data,
+//         message:"Data has been added successfully"
+//     })
+// }
+
+// but this is redundant because we are storing the data in a variable and it will be lost when the server restarts. also, it repeats the data every time we send a POST request. To avoid this, we can use a database to store the data persistently.
+
+
+
 let students = [
     {'id':1, 'name':'Pahul'},
     {'id':2, 'name':'Rohit'},
@@ -54,8 +79,7 @@ export async function GET(){
 export async function POST(request){
     const data = await request.json()
 
-    students.push(data)
-    
+    students.push(...data)
     return Response.json({
         students:data,
         message:"Data has been added successfully"
