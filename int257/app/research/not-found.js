@@ -1,9 +1,8 @@
-import React from 'react'
-
+import React from "react"
 export default function NotFound() {
     return (
         <div>
-            Invalid Reseach Slug
+            <h1>Invalid Research Slug</h1>
         </div>
     )
 }
