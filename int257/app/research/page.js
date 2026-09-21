@@ -8,6 +8,10 @@ export default async function Portal(){
     return(
         <div>
             <h1>Research Portal</h1>
+            <div key={data.id}>
+                <h2>{data[0].title}</h2>
+                <p>{data[0].body}</p>
+            </div>
         </div>
     )
 }
