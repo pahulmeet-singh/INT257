@@ -1,7 +1,8 @@
 "use client"
-import React from 'react'
+import React,{useState} from 'react'
 
 export default function AddStudent() {
+    const [students, setStudents] = useState([])
     async function addStudent(){
         const res=await fetch('http://localhost:3000/api/hello',
             {
@@ -14,13 +15,13 @@ export default function AddStudent() {
             }
         )
         const data=await res.json()
-        console.log(data)
+        setStudents([...students, data])
     }
 
   return (
     <div>
         <button onClick={addStudent}> + Add Student </button>
-        {data.map((item)=>(
+        {students.map((item)=>(
             <div key={item.id}>
                 <h1>{item.name}</h1>
                 <p>{item.course}</p>
@@ -29,3 +30,5 @@ export default function AddStudent() {
     </div>
   )
 }
+
+//data variable is not defined in this component, so the mapping over data will throw an error. You need to fetch the data and store it in a state variable to render it properly.
