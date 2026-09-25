@@ -5,13 +5,13 @@ export default async function GetStudent() {
     const data=await res.json()
   return (
     <div>
-        {/* {data.map((item)=>(
+        {data.map((item)=>(
             <div key={item.id}>
                 <h1>{item.name}</h1>
             </div>
-        ))} */}
-        
-        {data.map((item)=>item.name)}
+        ))}
+
+        {/* {data.map((item)=>item.name)} */}
     </div>
   )
 }
