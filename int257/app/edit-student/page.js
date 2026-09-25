@@ -57,54 +57,48 @@ export default function EditStudent() {
 
   // Edit student
   async function editStudent(id, name) {
-    const res = await fetch("http://localhost:3000/api/hello", {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        id: id,
-        name: name,
-      }),
-    });
-
+    const res = await fetch("http://localhost:3000/api/hello",
+        {
+            method: "PUT",
+            body: JSON.stringify({
+                id: id,
+                name: name,
+                course: "NEXTJS"
+            })
+        }
+    )
     const data = await res.json();
     setStudents(data.students);
   }
 
   // Delete student
-  async function deleteStudent(id) {
-    const res = await fetch("http://localhost:3000/api/hello", {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        id: id,
-      }),
-    });
-
+  async function deleteStudent() {
+    const res = await fetch("http://localhost:3000/api/hello", 
+        {
+            method: "DELETE",
+            body: JSON.stringify({
+                id: 3,
+                name: "Pritam Pandey",
+                course:"NEXTJS"
+            })
+        }
+    )
     const data = await res.json();
     setStudents(data.students);
   }
 
   return (
     <div>
-      <h1>Edit / Delete Students</h1>
+        <button onClick={editStudent}>Edit Student</button>
+        <br />
+        <button onClick={deleteStudent}>Delete Student</button>
+        {students.map((item) => (
 
-      {students.map((item) => (
-        <div key={item.id}>
-          <h2>{item.name}</h2>
-
-          <button onClick={() => editStudent(item.id, "Pahul")}>
-            Edit
-          </button>
-
-          <button onClick={() => deleteStudent(item.id)}>
-            Delete
-          </button>
-        </div>
-      ))}
+            <div key={item.id}>
+                <h1>{item.name}</h1>
+                <p>{item.course}</p>
+            </div>
+        ))}
     </div>
-  );
+  )
 }
