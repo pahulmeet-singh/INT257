@@ -15,7 +15,7 @@ export default function AddStudent() {
             }
         )
         const data=await res.json()
-        setStudents([...students, data])
+        setStudents(data.students)
     }
 
   return (
@@ -32,3 +32,4 @@ export default function AddStudent() {
 }
 
 //data variable is not defined in this component, so the mapping over data will throw an error. You need to fetch the data and store it in a state variable to render it properly.
+//this will only add the new student to the state variable, but it will not fetch the existing students from the server. You need to fetch the existing students in a useEffect hook and set it to the state variable when the component mounts.
