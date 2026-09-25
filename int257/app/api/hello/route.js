@@ -90,29 +90,84 @@ and we use these HTTP methods to perform CRUD operations
 //the reason we replaced the students:data with students:students is because we want to return the updated array of students after adding the new data. The students:data would only return the newly added data, while students:students returns the entire array including the new data.
 
 
-let students = [
-    {'id':1, 'name':'Pahul'},
-    {'id':2, 'name':'Rohit'},
-    {'id':3, 'name':'Aman'}
-]
+// let students = [
+//     {'id':1, 'name':'Pahul'},
+//     {'id':2, 'name':'Rohit'},
+//     {'id':3, 'name':'Aman'}
+// ]
 
+// export async function GET(){
+//     return Response.json(students)
+// }
+
+// export async function POST(request){
+//     const data = await request.json()
+//     if (Array.isArray(data)) {
+//         students.push(...data) // Use the spread operator to append multiple students
+//     } else{
+//         const newStudent = {
+//             id: data.id,
+//             name: data.name
+//         }
+//         students.push(newStudent)
+//     }
+//     return Response.json({
+//         students:students,
+//         message:"Data has been added successfully"
+//     })
+// }
+
+
+//updated code
+let students=[
+        {'id':1,'name':'Shiana'},
+        {'id':2,'name':'Ankit'},
+        {'id':3,'name':'Pritam'}
+    ]
 export async function GET(){
     return Response.json(students)
 }
-
 export async function POST(request){
-    const data = await request.json()
+    const data = await request.json();
     if (Array.isArray(data)) {
-        students.push(...data) // Use the spread operator to append multiple students
-    } else{
-        const newStudent = {
-            id: data.id,
-            name: data.name
+     students.push(...data)
+    }else{
+        const newStudent={
+            id:data.id,
+            name:data.name
         }
-        students.push(newStudent)
+     students.push(newStudent)
     }
     return Response.json({
         students:students,
-        message:"Data has been added successfully"
+        message:"Data submitted successfully"
+    })
+}
+
+export async function PUT(request){
+    const data= await request.json();
+    const oldData=students.find(item=>item.id===data.id)
+    if(!oldData){
+        return Response.json({message:"Student Not found"})
+    }
+    oldData.id=data.id
+    oldData.name=data.name
+    return Response.json({
+        message:'Data updated successfully',
+        students:students
+    })
+}
+
+
+export async function DELETE(request){
+    const data = await request.json();
+    const index=students.findIndex(item=>item.id===data.id)
+    if(index===-1){
+        return Response.json({message:"Student Not found"})
+    }
+    students.splice(index,1)
+    return Response.json({
+        message:'Data updated successfully',
+        students:students
     })
 }
