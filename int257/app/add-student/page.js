@@ -33,3 +33,4 @@ export default function AddStudent() {
 
 //data variable is not defined in this component, so the mapping over data will throw an error. You need to fetch the data and store it in a state variable to render it properly.
 
+// now create a new function in a new file called edit-student/page.js that fetches the PUT function from the api/hello/route.js file and allows the user to edit a student's name based on their id. The function should take in the student's id and the new name as parameters, and then send a PUT request to the API with the updated data. After the request is successful, it should update the state variable to reflect the changes.
