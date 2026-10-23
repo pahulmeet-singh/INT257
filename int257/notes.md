@@ -46,3 +46,11 @@ there are four types of rendering in nextjs: static generation, server-side rend
 4. Incremental Static Regeneration
     - Incremental static regeneration is the process of updating static pages after they have been built. This means that the HTML for a page can be regenerated on the server when a client makes a request for that page, even if the page was previously generated as a static file. This approach is ideal for pages that require frequent updates, such as news articles or product listings. Incremental static regeneration can improve performance and provide a better user experience since the content can be updated without requiring a full page reload.
     - used for pages that require frequent updates, such as news articles or product listings.
+
+## unit 3
+
+- what are server actions?
+- Server Actions are a feature in Next.js that allows developers to define server-side functions that can be called from the client-side code. These actions can be used to perform server-side operations, such as fetching data from a database or performing authentication, without exposing sensitive logic to the client. Server Actions help improve security and maintainability by keeping server-side logic separate from client-side code.
+
+- what is optimistic UI updates?
+- Optimistic UI updates are a technique used in web development to improve the user experience by providing immediate feedback to the user when an action is performed, even before the server has confirmed the action.
