@@ -78,7 +78,7 @@ export default function Like() {
     <div>
       <h2>This is my POST</h2>
       <button onClick={addLike}>Like👍</button>
-      <h3>Like Count: {optimisticLikes}</h3>
+      <h3>Like Count: {optimisticLikes }</h3>
     </div>
   );
 }
