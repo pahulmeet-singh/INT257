@@ -4,7 +4,7 @@ import React, {use, useState} from 'react'
 
 export default function Login() {
     const [uname, setUname] = useState("")
-    const [pass, setPass] = useState("")
+    const [password, setPassword] = useState("")
     const[msg, setMsg] = useState("")
     const route=useRouter()
     async function loginUser(){
@@ -14,9 +14,9 @@ export default function Login() {
             headers:{
                 "Content-Type":"application/json"
             },
-            body:JSON.stringify({
-                username:uname,
-                pass:pass
+            body: JSON.stringify({
+                username: uname,
+                password: password
             })
         })
         if(res.success){
@@ -29,7 +29,7 @@ export default function Login() {
   return (
     <div>
         <input name="uname" placeholder='Enter Username' onChange={(e)=>setUname(e.target.value)}/>
-        <input name="pass"  placeholder='Enter Password' onChange={(e)=>setPass(e.target.value)}/>
+        <input name="password"  placeholder='Enter Password' onChange={(e)=>setPassword(e.target.value)}/>
         <button onClick={loginUser}>Login</button>
         <br/>
         <h3>{msg}</h3>
