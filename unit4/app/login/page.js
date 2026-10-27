@@ -6,11 +6,22 @@ export default function Login() {
     const [pass, setPass] = useState("")
     const[msg, setMsg] = useState("")
     function loginUser(){
-        if(uname === "admin" && pass === "1234"){
-            setMsg("Login successful")
-        } else {
-            setMsg("Invalid credentials")
-        }
+        //checking credentials using api
+        fetch('/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({username: uname, password: pass})
+        })
+        .then(response => response.json())
+        .then(data => {
+            if(data.success){
+                setMsg("Login successful")
+            } else {
+                setMsg("Invalid credentials")
+            }
+        })
     }
   return (
     <div>
