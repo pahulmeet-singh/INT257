@@ -1,6 +1,11 @@
 import React from 'react';
 
-function Dashboard() {
+export default async function Dashboard() {
+    const cookieStore = await cookies();
+    const data = cookieStore.get("sessionId");
+    if(!data){
+        redirect("/login")
+    }
   return (
     <div>
         <form action="/api/logout" method="POST">
@@ -11,4 +16,3 @@ function Dashboard() {
   )
 }
 
-export default Dashboard
