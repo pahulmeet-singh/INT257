@@ -19,6 +19,7 @@ export default function Login() {
                 password: password
             })
         })
+        // const response = await res.json
         if(res.ok){
             setMsg("Login Successful")
             route.push("/dashboard")
