@@ -19,7 +19,7 @@ export default function Login() {
                 password: password
             })
         })
-        if(res.success){
+        if(res.ok){
             setMsg("Login Successful")
             route.push("/dashboard")
         } else {
