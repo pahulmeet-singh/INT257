@@ -9,6 +9,8 @@ export default function Login() {
         <input name="uname" placeholder='Enter Username' onChange={(e)=>setUname(e.target.value)}/>
         <input name="pass"  placeholder='Enter Password' onChange={(e)=>setPass(e.target.value)}/>
         <button>Login</button>
+        <br/>
+        <p>{uname} - {pass}</p>
     </div>
   )
 }
