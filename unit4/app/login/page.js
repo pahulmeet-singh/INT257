@@ -5,23 +5,24 @@ export default function Login() {
     const [uname, setUname] = useState("")
     const [pass, setPass] = useState("")
     const[msg, setMsg] = useState("")
-    function loginUser(){
+    async function loginUser(){
         //checking credentials using api
-        fetch('/api/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
+        const res = await fetch("/api/login",{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
             },
-            body: JSON.stringify({username: uname, password: pass})
+            body:JSON.stringify({
+                username:uname,
+                password:pass
+            })
         })
-        .then(response => response.json())
-        .then(data => {
-            if(data.success){
-                setMsg("Login successful")
-            } else {
-                setMsg("Invalid credentials")
-            }
-        })
+        const data=await res.json()
+        if(data.success){
+            setMsg("Login Successful")
+        } else {
+            setMsg("Login Failed")
+        }
     }
   return (
     <div>
