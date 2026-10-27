@@ -1,13 +1,12 @@
 "use client"
 import React from 'react'
 
-function Login() {
+export default function Login() {
   return (
     <div>
-        <input>
-        </input>
+        <input name="uname" placeholder='Enter Username'/>
+        <input name="pass" placeholder='Enter Password' type="password"/>
+        <button>Login</button>
     </div>
   )
 }
-
-export default Login
