@@ -144,3 +144,5 @@ export default function LoginPage() {
     </main>
   );
 }
+
+//use of event.preventDefault() in the handleLogin function is to prevent the default form submission behavior, which would cause the page to reload. By preventing the default action, we can handle the login process asynchronously using JavaScript without refreshing the page. This allows for a smoother user experience, as we can display error messages or redirect the user without losing the current state of the application.
