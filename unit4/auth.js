@@ -1,65 +1,69 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 
-export const {handlers, signIn, signOut, auth} = NextAuth({
-    session:{
+export const { handlers, signIn, signOut, auth } = NextAuth({
+    session: {
         strategy: "jwt",
         maxAge: 60 * 60,
-    }
     },
 
-    providers:[
+    providers: [
         Credentials({
             credentials: {
-                email:{
+                email: {
                     label: "Email",
                     type: "email",
                     placeholder: "student@example.com",
                 },
-                password:{
+                password: {
                     label: "Password",
                     type: "password",
                     placeholder: "Password",
                 },
             },
 
-            async authorize(credentials){
+            async authorize(credentials) {
                 const email = credentials?.email;
                 const password = credentials?.password;
 
-                if(
-                    email === "student@example.com" && 
+                if (
+                    email === "student@example.com" &&
                     password === "Student@123"
                 ) {
-                    return { 
+                    return {
                         id: 101,
                         name: "Aarav Sharma",
                         email: "student@example.com",
-                        role: "student"
+                        role: "student",
                     };
                 }
+
                 return null;
             },
         }),
     ],
 
-    callbacks:{
-        async jwt({token, user}){
-            if(user){
+    callbacks: {
+        async jwt({ token, user }) {
+            if (user) {
                 token.id = user.id;
                 token.role = user.role;
             }
+
             return token;
         },
-        async session({session, token}){
-            if(session.user){
+
+        async session({ session, token }) {
+            if (session.user) {
                 session.user.id = token.id;
                 session.user.role = token.role;
             }
+
             return session;
         },
     },
-    pages:{
+
+    pages: {
         signIn: "/login",
     },
-})
+});
