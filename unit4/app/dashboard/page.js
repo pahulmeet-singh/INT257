@@ -17,3 +17,40 @@
 //   )
 // }
 
+
+import { auth, signOut } from "@/auth";
+import { redirect } from "next/navigation";
+
+export default async function DashboardPage() {
+  const session = await auth();
+
+  if (!session?.user) {
+    redirect("/login");
+  }
+
+  async function handleLogout() {
+    "use server";
+
+    await signOut({
+      redirectTo: "/login",
+    });
+  }
+
+  return (
+    <main style={{ padding: "40px" }}>
+      <h1>Student Dashboard</h1>
+
+      <p>Welcome, {session.user.name}!</p>
+
+      <p>Email: {session.user.email}</p>
+
+      <p>Student ID: {session.user.id}</p>
+
+      <p>Role: {session.user.role}</p>
+
+      <form action={handleLogout}>
+        <button type="submit">Logout</button>
+      </form>
+    </main>
+  );
+}
