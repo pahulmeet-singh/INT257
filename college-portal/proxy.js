@@ -17,3 +17,12 @@ export function proxy(request) {
     }
     return NextResponse.next();
 }
+
+export const config = {
+    matcher:[
+        "/dashboard/:path*",
+        "/student/:path*",
+        "/teacher/:path*",
+        "/admin/:path*"
+    ]
+}
