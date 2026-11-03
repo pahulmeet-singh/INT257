@@ -10,3 +10,16 @@ if (!secret) {
 
 const secretKey = new TextEncoder().encode(secret)
 
+const COOKIE_NAME = "college-session"
+
+export async function createSession(user) {
+    const expiresAt = new Date(Date.now() + 1000 * 60 * 60 ) // 1 hour
+
+    const token=await new SignJWT({
+        role:user.role,
+        name:user.name,
+    })
+    .setProtectedHeader({alg:"HS256"})
+    .setSubject(user.id)
+    .setIssuedAt()
+}
