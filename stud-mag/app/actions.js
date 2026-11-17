@@ -60,8 +60,8 @@ export async function createStudent(prevState, formData) {
     throw error;
   }
 
-  revalidatePath("/students");
-  redirect("/students");
+  revalidatePath("/student");
+  redirect("/student");
 }
 
 // 4. UPDATE student
@@ -100,8 +100,8 @@ export async function updateStudent(id, prevState, formData) {
     throw error;
   }
 
-  revalidatePath("/students");
-  redirect("/students");
+  revalidatePath("/student");
+  redirect("/student");
 }
 
 // 5. DELETE student
@@ -118,5 +118,5 @@ export async function deleteStudent(formData) {
     },
   });
 
-  revalidatePath("/students");
+  revalidatePath("/student");
 }
